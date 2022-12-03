@@ -1,0 +1,159 @@
+\documentclass[ms,a4paper]{memoir}
+\chapterstyle{dash} % try also reparticle
+\usepackage{ulem}   % underline
+\usepackage{xcolor}
+%% Polski
+\usepackage[T1]{fontenc}
+\usepackage[polish]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage{marginnote}
+%
+%\usepackage{hyperref}
+% All font size must be normal size
+\renewcommand{\large}{\normalsize}
+\renewcommand{\Large}{\normalsize}
+\newcommand{\red}[1]{\textcolor{red!50!black}{#1}}
+\newcommand{\RED}[1]{\textcolor{red!50!black}{\MakeUppercase{#1}}}
+% font hyphenation
+\usepackage{everysel}
+\EverySelectfont{%
+\fontdimen2\font=0.6em % interword space
+\fontdimen3\font=0.2em % interword stretch
+\fontdimen4\font=0.1em % interword shrink
+\fontdimen7\font=0.9em % extra space
+\hyphenchar\font=`\-% to allow hyphenation
+}
+
+
+%\usepackage[spacing=true,factor=1200, stretch=10, shrink=15]{microtype}
+
+\renewcommand{\baselinestretch}{1}
+
+
+\newbox\flinebox
+\newbox\slinebox
+\newbox\mlinebox
+\def\duplines{\setlength\parindent{0pt}
+  \setbox\flinebox\lastbox
+  \ifvoid\flinebox\relax
+  \else
+  \setbox\slinebox\hbox{\copy\flinebox}
+  \setbox\mlinebox\hbox{\copy\flinebox}
+  \unskip\unpenalty
+  {\duplines}
+
+{\color{black!30} \box\flinebox\vspace*{-2.85ex}}
+{\color{black!50} \makebox[\textwidth]{\hspace*{-0.25pt}\box\mlinebox}\vspace*{-2.75ex}}
+{\color{black!90}  \makebox[\textwidth]{\hspace*{0.25pt}\box\slinebox}}\fi
+
+}
+
+\newcommand\BlurText[1]{%
+  \vbox{#1\par\duplines}}
+
+
+\begin{document}
+\chapter{\RED{Skrót}}
+\section{}
+\paragraph{}
+Pakaczuki jest przygodą pod realia Zewu Cthulhu, rozgrywać się powinna w międzywojniu (1920-1930)
+w centralnych Stanach Zjednoczonych. Przewiduje się ją na \emph{1} do 2 sesji, przy ekipie od \emph{1} do 4 graczy.\\
+\section{Skrót}
+Gracze na zaproszenie wuja jadą do małej miejscowości w górach (Pakaczuki).
+Droga do tego miejsca jest utrudniona z powodu na rozmokłe drogi oraz pozawalane mosty.
+Na miejsciu okazuje się, że wiosenne roztopy co roku zawalają jedyny most z miejscowości, a mieszkańcy składają przybyłych w ofierze.
+Jedyne możliwe wyjście z terenu osady jest przez kopalnie i nieeukiesowy labirynt.
+\paragraph{}
+Przygoda jest aktualnie w stanie \red{alpha}.
+\newpage
+\tableofcontents
+\newpage
+
+\chapter{\RED{Przed rozgrywką}}
+
+\section{Wymagania co to graczy}
+Przygoda nie ma jakiś szczególnych wymagań co do graczy.
+Wszelkie niezbędne przedmioty będą do znalezienia na miejscu,
+a żadna z umiejętności nie jest niezbędna do pchnięcia przygody
+na przód. Jedynym ważnym elementem jest fakt, że jeden z graczy
+ma postać nazywającą się \emph{Evert Hampton}. Wymóg ten jest
+podyktowanym treścią testamentu.
+\section{Potrzebne materiały}
+Mistrz gry powinien wyposażyć się w:
+\begin{itemize}
+\item Małą kopertę
+\item Dużą kopertę (w której zmieści się mała)
+\item Wydruk testamentu ze strony %\pageref{hand:testament}
+\end{itemize}
+
+\chapter{\RED{Prolog}}
+\section{Tło fabularne}
+Jeden z graczy (Evert Hampton) otrzymał \emph{tydzień temu} list od swojego wuja, Johna.
+Wuj zaprasza go do Pakaczuki, swojego domu, na obchody \emph{Święta}.
+Jest to pierwszy list od roku i nie ma w nim wzmianki o przepisie na pierogi, o który Evert prosił.
+Nie jest to jendak nic dziwnego, wuj w przeszłości potrafił przestać pisać na parę miesięcy i po tym czasie odpisać jak by nic się nie stało.
+Podeskcytowany możliwością spotkania krewnego, którego nie widział od ponad
+siedmiu lat, Evert chętnie zabiera się do drogi.
+Wuj w liście zaprasza nie tylko jego, ale jeśli ma jeszcze z dwóch trzech przyjaciół, to spokojnie się zmieścicie.
+
+
+\section{Otwarcie}
+Postaci podróżują już jeden lub dwa dni do celu.
+Podróż przebiega w miare normalnie. Ford T którym się przemieszczają nie zawodzi, a pogoda
+dopisuje. Mimo że jest \emph{przełom marca i lutego} słońce dogrzewa i jedzie się stosunkowo
+przyjemnie. Właśnie dojechali do zajazdu w małej
+miejscowości pod górami. [TODO] bo tak nazywa się ta miejscowość. Jest praktycznie ostanim miejscem z ogolnie rozumianą cywilizacją.
+Miejscowość ta ma poza zajazdem kilka domów, sklep i warsztat/stację benzynową.
+Zwróć uwagę graczy, że wedle mapy stąd do Wuja jest jeszcze 2h.
+Jak wezmą poprawkę na pogodę i średnie warunki drogowe, maksymalnie 4h jazdy.
+Trzeba zrobić wrażenie, że nie da się już skoczyć tam teraz po nocy, ale rano to moment i są na miejscu.
+
+\subsection{Miejsce: Zajazd}
+Zajazd jest wielkości dużego domu.
+Sprawia wrażenie miejsca raczej przytulnego.
+Ma dwa piętra i parter.
+Na piętrach jest 8 pokoi do spania.
+A parter przeznaczony jest na jadalnie, recepcję i pokój oczekiwania.
+Z uwagi na fakt, że gracze przyjeżdzają totlanie poza jakimkolwieks sezonem, są jedymi goścmi.
+Miejsce to prowadzi rodzina mieszkająca parę domów dalej, akurat jak gracze przyjadą na recepcji
+jest Pani Hanna Sevani.
+\marginnote{|Osoba: Hanna Sevani}
+Hanna jest starszą ale jeszcze aktywną kobietą, pod 50 lat.
+Jest aż zbyt słodka, może odnieść się do postaci per `kochanienki' jeśli jej pozwolimy.
+Pyta co gracze chcą na śniadanie, ale z uwagi na prywatne powody miękko upiera się by to było o 7 rano nie później.
+\\
+Tu mamy scene śniadania w zajeździe.
+Jest to dobre miejsce na opisanie wyglądu postaci i krótką pogawędkę przy jajecznicy.
+
+Przy samym wyjeździe zwróć uwagę, że piękny wschód słońca przeszedł w równie piękny poranek.
+Ptaszki śpiewają a rzadkie przebiśniegi i pęki drzew wydają się im zalewać cały świat zielonoscią.
+Pilnuj by nie zabrali więcej niż jednej kanapki na drogę, może wspomnij że Wujo pewnie ich ugości.
+
+Wyjechali?
+\chapter{\RED{Droga do Pakaczuki}}
+
+Jak tylko zajazd zniknie im za tylnią szybą na tyle by nie myśleli wracać, zasnuj niebo szarymi chmurami.
+Jest bardzo ciężka pogoda, wieje, mży, a koła Forda wprawionego w takich warunkach uślizgują się na błocie pośniegowym.
+Turlają się tak z 6 do 8 godzin.
+Opisz jak bardzo jest im zimno.
+Jak bardzo czują że ich kości zamarzają.
+Jak przeklinają tą przemoczoną mapę na której już nic nie widać.
+Jeśli zarzucą, że mają takie umiejętności jak ``Nawigacja'' wyjaśnij im, że nie robiłeś testów bo nawigacja idzie im świetnie.
+Tylko po drodze mijają już któryś zawalony most i próbują na około.
+Nie zatrzymali się też po drodze, ugotować coś albo zrobić miejsce do spania bo za każdym razem wierzyli, że to już za tym wzgórzem bo mapa pokazuje.
+Jak już osłabiłeś ich ducha.
+Jak już faktycznie czują beznadzieje sytułacji czas wprowadzić kolejnego BNa.
+\marginnote{|Osoba:Wolny Jeneń}
+Z kierunku w którym jadą nadjeżdza na koniu indianin.
+Jest pozytywnie nastawiony i macha do graczy.
+Odziany jest w Jeansy i Ponczo.
+Gdy podjedzie zauważa, że pewnie się zgubili i dalsza jazda tą drogą nie ma najmniejszego sensu, tamten most też jest zawalony.
+Po usłyszeniu, że jadą do Pakaczuki, tłumaczy że zna drogę, ale teraz to by się tam pieszo by nie pakował, a automobilem to już na pewno.
+Zauważa też, że idzie burza, proponuje w geście dobrej woli, że ich przenocuje i nalega by iść za nim.
+Może poprosić o podwiezienie ``futer'', które udało mu się upolować na bagażniku samochodu.
+Spokojnie ma koc którym wyłożył grzbiet konia więc nie ubrudzi.
+
+
+
+%\label{hand:testament}
+\end{document}
